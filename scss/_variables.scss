@@ -1201,12 +1201,24 @@ $paddings-helpers-steps-count:                  8;
 $paddings-helpers-horizontal-steps-count:       8;
 $paddings-helpers-vertical-steps-count:         16;
 
+// Layout
+
 // Header
+
+$header-height:                     50px;
 
 // Footer
 
+$footer-height:                     40px;
+
 // Sidebars
 
-$left-sidebar-full-width:       270;
-$left-sidebar-icon-width:       60;
-$left-sidebar-collpased-width:  270;
+$left-sidebar-full-width:           230px;
+$left-sidebar-logo-height:          $header-height;
+$left-sidebar-icon-width:           20px;
+$left-sidebar-collpased-width:      50px;
+
+$right-sidebar-full-width:          230px;
+$right-sidebar-logo-height:         $header-height;
+$right-sidebar-icon-width:          20px;
+$right-sidebar-collpased-width:     50px;

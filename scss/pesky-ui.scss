@@ -3,4 +3,92 @@
 
 body {
     font-family: Roboto, Arial, sans-serif;
+    overflow: hidden;
+}
+
+#flex-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    #left-sidebar,
+    #right-sidebar {
+        overflow: visible;
+        background-color: #DDDDDD;
+    }
+
+    #left-sidebar {
+        width: #{$left-sidebar-full-width};
+
+
+        &.collapsed {
+            width: #{$left-sidebar-collpased-width};
+        }
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    #right-sidebar {
+        width: #{$right-sidebar-full-width};
+
+        &.collapsed {
+            width: #{$right-sidebar-collpased-width};
+        }
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    #content-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: flex-start;
+        flex: 1;
+
+        > header {
+            width: 100%;
+            height: #{$header-height};
+            background-color: #CCCCCC;
+        }
+
+        > footer,
+        #content-with-footer > footer {
+            width: 100%;
+            height: #{$footer-height};
+            background-color: #CCCCCC;
+        }
+
+        #content {
+            width: 100%;
+            flex: 1;
+        }
+
+        > #content {
+            overflow: auto;
+        }
+
+        #content-with-footer {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            flex: 1;
+            overflow: auto;
+
+            > #content {
+                overflow: visible;
+            }
+
+        }
+
+
+    }
+
 }

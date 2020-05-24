@@ -1,4 +1,87 @@
 body {
   font-family: Roboto, Arial, sans-serif;
+  overflow: hidden;
+}
+
+#flex-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#flex-layout #left-sidebar,
+#flex-layout #right-sidebar {
+  overflow: visible;
+  background-color: #DDDDDD;
+}
+
+#flex-layout #left-sidebar {
+  width: 230px;
+}
+
+#flex-layout #left-sidebar.collapsed {
+  width: 50px;
+}
+
+#flex-layout #left-sidebar.hidden {
+  display: none;
+}
+
+#flex-layout #right-sidebar {
+  width: 230px;
+}
+
+#flex-layout #right-sidebar.collapsed {
+  width: 50px;
+}
+
+#flex-layout #right-sidebar.hidden {
+  display: none;
+}
+
+#flex-layout #content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: flex-start;
+  flex: 1;
+}
+
+#flex-layout #content-wrapper > header {
+  width: 100%;
+  height: 50px;
+  background-color: #CCCCCC;
+}
+
+#flex-layout #content-wrapper > footer,
+#flex-layout #content-wrapper #content-with-footer > footer {
+  width: 100%;
+  height: 40px;
+  background-color: #CCCCCC;
+}
+
+#flex-layout #content-wrapper #content {
+  width: 100%;
+  flex: 1;
+}
+
+#flex-layout #content-wrapper > #content {
+  overflow: auto;
+}
+
+#flex-layout #content-wrapper #content-with-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  overflow: auto;
+}
+
+#flex-layout #content-wrapper #content-with-footer > #content {
+  overflow: visible;
 }
 /*# sourceMappingURL=pesky-ui.css.map */
