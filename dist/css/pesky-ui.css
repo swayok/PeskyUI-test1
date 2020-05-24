@@ -13,55 +13,12 @@ body {
   overflow: hidden;
 }
 
-#flex-layout #left-sidebar,
-#flex-layout #right-sidebar {
-  overflow: visible;
-  background-color: #DDDDDD;
-}
-
-#flex-layout #left-sidebar {
-  width: 230px;
-}
-
-#flex-layout #left-sidebar.collapsed {
-  width: 50px;
-}
-
-#flex-layout #left-sidebar.hidden {
-  display: none;
-}
-
-#flex-layout #right-sidebar {
-  width: 230px;
-}
-
-#flex-layout #right-sidebar.collapsed {
-  width: 50px;
-}
-
-#flex-layout #right-sidebar.hidden {
-  display: none;
-}
-
 #flex-layout #content-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   align-items: flex-start;
   flex: 1;
-}
-
-#flex-layout #content-wrapper > header {
-  width: 100%;
-  height: 50px;
-  background-color: #CCCCCC;
-}
-
-#flex-layout #content-wrapper > footer,
-#flex-layout #content-wrapper #content-with-footer > footer {
-  width: 100%;
-  height: 40px;
-  background-color: #CCCCCC;
 }
 
 #flex-layout #content-wrapper #content {
@@ -73,7 +30,7 @@ body {
   overflow: auto;
 }
 
-#flex-layout #content-wrapper #content-with-footer {
+#flex-layout #content-wrapper > #content-with-footer {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -81,7 +38,52 @@ body {
   overflow: auto;
 }
 
-#flex-layout #content-wrapper #content-with-footer > #content {
+#flex-layout #content-wrapper > #content-with-footer > #content {
   overflow: visible;
+}
+
+#content-wrapper > header,
+#content-with-footer > header,
+#content > header {
+  width: 100%;
+  height: 50px;
+  background-color: #CCCCCC;
+}
+
+#content-wrapper > footer,
+#content > footer,
+#content-with-footer > footer {
+  width: 100%;
+  min-height: 40px;
+  background-color: #CCCCCC;
+  line-height: 20px;
+  padding: 10px 15px 10px 15px;
+}
+
+#left-sidebar,
+#right-sidebar {
+  overflow: visible;
+  background-color: #DDDDDD;
+}
+
+#left-sidebar.hidden,
+#right-sidebar.hidden {
+  display: none;
+}
+
+#left-sidebar {
+  width: 230px;
+}
+
+#left-sidebar.collapsed {
+  width: 50px;
+}
+
+#right-sidebar {
+  width: 230px;
+}
+
+#right-sidebar.collapsed {
+  width: 50px;
 }
 /*# sourceMappingURL=pesky-ui.css.map */

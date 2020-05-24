@@ -1,0 +1,7 @@
+#content-wrapper > header,
+#content-with-footer > header,
+#content > header {
+    width: 100%;
+    height: #{$header-height};
+    background-color: #CCCCCC;
+}

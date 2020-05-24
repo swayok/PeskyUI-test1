@@ -1,0 +1,9 @@
+#content-wrapper > footer,
+#content > footer,
+#content-with-footer > footer {
+    width: 100%;
+    min-height: #{$footer-height};
+    background-color: #CCCCCC;
+    line-height: 20px;
+    padding: 10px 15px 10px 15px;
+}

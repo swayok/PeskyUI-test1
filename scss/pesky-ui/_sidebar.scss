@@ -1,0 +1,27 @@
+#left-sidebar,
+#right-sidebar {
+    overflow: visible;
+    background-color: #DDDDDD;
+
+    &.hidden {
+        display: none;
+    }
+}
+
+#left-sidebar {
+    width: #{$left-sidebar-full-width};
+
+    &.collapsed {
+        width: #{$left-sidebar-collpased-width};
+    }
+
+}
+
+#right-sidebar {
+    width: #{$right-sidebar-full-width};
+
+    &.collapsed {
+        width: #{$right-sidebar-collpased-width};
+    }
+
+}

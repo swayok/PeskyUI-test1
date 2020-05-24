@@ -15,56 +15,12 @@ body {
     height: 100vh;
     overflow: hidden;
 
-    #left-sidebar,
-    #right-sidebar {
-        overflow: visible;
-        background-color: #DDDDDD;
-    }
-
-    #left-sidebar {
-        width: #{$left-sidebar-full-width};
-
-
-        &.collapsed {
-            width: #{$left-sidebar-collpased-width};
-        }
-
-        &.hidden {
-            display: none;
-        }
-    }
-
-    #right-sidebar {
-        width: #{$right-sidebar-full-width};
-
-        &.collapsed {
-            width: #{$right-sidebar-collpased-width};
-        }
-
-        &.hidden {
-            display: none;
-        }
-    }
-
     #content-wrapper {
         display: flex;
         flex-direction: column;
         justify-content: stretch;
         align-items: flex-start;
         flex: 1;
-
-        > header {
-            width: 100%;
-            height: #{$header-height};
-            background-color: #CCCCCC;
-        }
-
-        > footer,
-        #content-with-footer > footer {
-            width: 100%;
-            height: #{$footer-height};
-            background-color: #CCCCCC;
-        }
 
         #content {
             width: 100%;
@@ -75,7 +31,7 @@ body {
             overflow: auto;
         }
 
-        #content-with-footer {
+        > #content-with-footer {
             display: flex;
             flex-direction: column;
             width: 100%;
@@ -88,7 +44,10 @@ body {
 
         }
 
-
     }
 
 }
+
+@import 'pesky-ui/header';
+@import 'pesky-ui/footer';
+@import 'pesky-ui/sidebar';
