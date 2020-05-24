@@ -1,23 +1,36 @@
-import $ from 'jquery'
+import Alert from './alert'
+import Button from './button'
+import Carousel from './carousel'
+import Collapse from './collapse'
+import Dropdown from './dropdown'
+import Modal from './modal'
+import Popover from './popover'
+import Scrollspy from './scrollspy'
+import Tab from './tab'
+import Toast from './toast'
+import Tooltip from './tooltip'
+import Util from './util'
 import PeskyUI from './pesky-ui'
 
-(($) => {
-    if (typeof $ === 'undefined') {
-        throw new TypeError('PeskyUI\'s JavaScript requires jQuery. jQuery must be included before PeskyUI\'s JavaScript.')
-    }
-
-    const version = $.fn.jquery.split(' ')[0].split('.')
-    const minMajor = 1
-    const ltMajor = 2
-    const minMinor = 9
-    const minPatch = 1
-    const maxMajor = 4
-
-    if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
-        throw new Error('PeskyUI\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0')
-    }
-})($)
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.5.0): index.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
 
 export {
+    Util,
+    Alert,
+    Button,
+    Carousel,
+    Collapse,
+    Dropdown,
+    Modal,
+    Popover,
+    Scrollspy,
+    Tab,
+    Toast,
+    Tooltip,
     PeskyUI
 }

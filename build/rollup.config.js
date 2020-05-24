@@ -1,49 +1,46 @@
 'use strict'
 
-const path    = require('path')
-const babel   = require('rollup-plugin-babel')
-const resolve = require('rollup-plugin-node-resolve')
+const path = require('path')
+const babel = require('rollup-plugin-babel')
+const resolve = require('@rollup/plugin-node-resolve')
+const bootstrapBanner = require('./banner.js')
+const peskyUIBanner = require('./peskyui-banner.js')
+const babelHelpers = require('./babel-helpers.js')
 
-const pkg     = require(path.resolve(__dirname, '../package.json'))
 const BUNDLE  = process.env.BUNDLE === 'true'
-const year    = new Date().getFullYear()
 
-let fileDest  = 'pesky-ui.js'
-const external = ['jquery', 'bootstrap']
+let fileDest = 'pesky-ui.js'
+const external = ['jquery', 'popper.js']
 const plugins = [
-  babel({
-    exclude: 'node_modules/**', // Only transpile our source code
-    externalHelpersWhitelist: [ // Include only required helpers
-      'defineProperties',
-      'createClass',
-      'inheritsLoose',
-      'defineProperty',
-      'objectSpread'
-    ]
-  })
+    babel({
+        // Only transpile our source code
+        exclude: 'node_modules/**',
+        // Include only required helpers
+        externalHelpersWhitelist: babelHelpers
+    })
 ]
 const globals = {
-  jquery: 'jQuery', // Ensure we use jQuery which is always available even in noConflict mode
+    jquery: 'jQuery', // Ensure we use jQuery which is always available even in noConflict mode
+    'popper.js': 'Popper'
 }
 
 if (BUNDLE) {
-  fileDest = 'pesky-ui.bundle.js'
-  plugins.push(resolve())
+    fileDest = 'pesky-ui.bundle.js'
+    // Remove last entry in external array to bundle Popper
+    external.pop()
+    delete globals['popper.js']
+    plugins.push(resolve())
 }
 
 module.exports = {
-  input: path.resolve(__dirname, '../js/index.js'),
-  output: {
-    banner: `/*!
-  * PeskyUI v${pkg.version} (${pkg.homepage})
-  * Copyright 2020-${year} ${pkg.author}
-  * Licensed under MIT (https://github.com/swayok/PeskyUI/blob/master/LICENSE)
-  */`,
-    file: path.resolve(__dirname, `../dist/js/${fileDest}`),
-    format: 'umd',
-    globals,
-    name: 'pesky-ui'
-  },
-  external,
-  plugins
+    input: path.resolve(__dirname, '../js/index.js'),
+    output: {
+        banner: peskyUIBanner() + "\n" + bootstrapBanner(),
+        file: path.resolve(__dirname, `../dist/js/${fileDest}`),
+        format: 'umd',
+        globals,
+        name: 'pesky-ui'
+    },
+    external,
+    plugins
 }
