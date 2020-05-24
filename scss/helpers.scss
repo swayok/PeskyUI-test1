@@ -1,0 +1,596 @@
+/*=================================================
+  HELPERS
+=================================================== */
+
+@import "functions";
+@import "variables";
+@import "cssgrid";
+
+/*===================================================
+  Height Helpers
+===================================================== */
+
+.h-a {
+    height: auto !important;
+}
+
+@for $multiplier from 0 through $heights-helpers-5px-steps-max-multiplier {
+    .max-h-#{$heights-helpers-5px-steps-min-value + 5 * $multiplier} {
+        max-height: #{$heights-helpers-5px-steps-min-value + 5 * $multiplier}px !important;
+    }
+
+    .min-h-#{$heights-helpers-5px-steps-min-value + 5 * $multiplier} {
+        min-height: #{$heights-helpers-5px-steps-min-value + 5 * $multiplier}px !important;
+    }
+
+    .h-#{$heights-helpers-5px-steps-min-value + 5 * $multiplier} {
+        height: #{$heights-helpers-5px-steps-min-value + 5 * $multiplier}px !important;
+    }
+}
+
+@for $multiplier from 0 through $heights-helpers-10px-steps-max-multiplier {
+    .max-h-#{$heights-helpers-10px-steps-min-value + 10 * $multiplier} {
+        max-height: #{$heights-helpers-10px-steps-min-value + 10 * $multiplier}px !important;
+    }
+
+    .min-h-#{$heights-helpers-10px-steps-min-value + 10 * $multiplier} {
+        min-height: #{$heights-helpers-10px-steps-min-value + 10 * $multiplier}px !important;
+    }
+
+    .h-#{$heights-helpers-10px-steps-min-value + 10 * $multiplier} {
+        height: #{$heights-helpers-10px-steps-min-value + 10 * $multiplier}px !important;
+    }
+}
+
+@for $multiplier from 0 through $heights-helpers-50px-steps-max-multiplier {
+    .max-h-#{$heights-helpers-50px-steps-min-value + 50 * $multiplier} {
+        max-height: #{$heights-helpers-50px-steps-min-value + 50 * $multiplier}px !important;
+    }
+
+    .min-h-#{$heights-helpers-50px-steps-min-value + 50 * $multiplier} {
+        min-height: #{$heights-helpers-50px-steps-min-value + 50 * $multiplier}px !important;
+    }
+
+    .h-#{$heights-helpers-50px-steps-min-value + 50 * $multiplier} {
+        height: #{$heights-helpers-50px-steps-min-value + 50 * $multiplier}px !important;
+    }
+}
+
+@for $multiplier from 0 through $heights-helpers-100px-steps-max-multiplier {
+    .max-h-#{$heights-helpers-100px-steps-min-value + 100 * $multiplier} {
+        max-height: #{$heights-helpers-100px-steps-min-value + 100 * $multiplier}px !important;
+    }
+
+    .min-h-#{$heights-helpers-100px-steps-min-value + 100 * $multiplier} {
+        min-height: #{$heights-helpers-100px-steps-min-value + 100 * $multiplier}px !important;
+    }
+
+    .h-#{$heights-helpers-100px-steps-min-value + 100 * $multiplier} {
+        height: #{$heights-helpers-100px-steps-min-value + 100 * $multiplier}px !important;
+    }
+}
+
+/*===============================================
+  Width Helpers
+================================================= */
+.fluid-width {
+    width: 100% !important;
+}
+
+@for $multiplier from 0 through $widths-helpers-5px-steps-max-multiplier {
+    .max-w-#{$widths-helpers-5px-steps-min-value + 5 * $multiplier} {
+        max-width: #{$widths-helpers-5px-steps-min-value + 5 * $multiplier}px !important;
+    }
+
+    .min-w-#{$widths-helpers-5px-steps-min-value + 5 * $multiplier} {
+        min-width: #{$widths-helpers-5px-steps-min-value + 5 * $multiplier}px !important;
+    }
+
+    .w-#{$widths-helpers-5px-steps-min-value + 5 * $multiplier} {
+        width: #{$widths-helpers-5px-steps-min-value + 5 * $multiplier}px !important;
+    }
+}
+
+@for $multiplier from 0 through $widths-helpers-10px-steps-max-multiplier {
+    .max-w-#{$widths-helpers-10px-steps-min-value + 10 * $multiplier} {
+        max-width: #{$widths-helpers-10px-steps-min-value + 10 * $multiplier}px !important;
+    }
+
+    .min-w-#{$widths-helpers-10px-steps-min-value + 10 * $multiplier} {
+        min-width: #{$widths-helpers-10px-steps-min-value + 10 * $multiplier}px !important;
+    }
+
+    .w-#{$widths-helpers-10px-steps-min-value + 10 * $multiplier} {
+        width: #{$widths-helpers-10px-steps-min-value + 10 * $multiplier}px !important;
+    }
+}
+
+@for $multiplier from 0 through $widths-helpers-50px-steps-max-multiplier {
+    .max-w-#{$widths-helpers-50px-steps-min-value + 50 * $multiplier} {
+        max-width: #{$widths-helpers-50px-steps-min-value + 50 * $multiplier}px !important;
+    }
+
+    .min-w-#{$widths-helpers-50px-steps-min-value + 50 * $multiplier} {
+        min-width: #{$widths-helpers-50px-steps-min-value + 50 * $multiplier}px !important;
+    }
+
+    .w-#{$widths-helpers-50px-steps-min-value + 50 * $multiplier} {
+        width: #{$widths-helpers-50px-steps-min-value + 50 * $multiplier}px !important;
+    }
+}
+
+@for $multiplier from 0 through $widths-helpers-100px-steps-max-multiplier {
+    .max-w-#{$widths-helpers-100px-steps-min-value + 100 * $multiplier} {
+        max-width: #{$widths-helpers-100px-steps-min-value + 100 * $multiplier}px !important;
+    }
+
+    .min-w-#{$widths-helpers-100px-steps-min-value + 100 * $multiplier} {
+        min-width: #{$widths-helpers-100px-steps-min-value + 100 * $multiplier}px !important;
+    }
+
+    .w-#{$widths-helpers-100px-steps-min-value + 100 * $multiplier} {
+        width: #{$widths-helpers-100px-steps-min-value + 100 * $multiplier}px !important;
+    }
+}
+
+/*===================================================
+  General/Misc Helpers
+===================================================== */
+
+/* overflow Helpers */
+.of-a {
+    overflow: auto !important;
+}
+
+.of-h {
+    overflow: hidden !important;
+}
+
+.of-v {
+    overflow: visible !important;
+}
+
+.of-x-a {
+    overflow-x: auto !important;
+}
+
+.of-x-h {
+    overflow-x: hidden !important;
+}
+
+.of-x-v {
+    overflow-x: visible !important;
+}
+
+.of-y-a {
+    overflow-y: auto !important;
+}
+
+.of-y-h {
+    overflow-y: hidden !important;
+}
+
+.of-y-v {
+    overflow-y: visible !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+/*===============================================
+  Text Helpers
+================================================= */
+
+.fs-0 {
+    font-size: 0 !important;
+}
+
+$font-size-helpers-1px-step-limit: 20;
+@for $font-size from 1 through $font-size-helpers-1px-step-limit {
+
+    .fs-#{$font-size} {
+        font-size: #{$font-size}px !important;
+    }
+}
+
+$font-size-helpers-2px-max-multiplier: 20;
+@for $multiplier from 1 through $font-size-helpers-2px-max-multiplier {
+
+    .fs-#{$font-size-helpers-1px-step-limit + 2 * $multiplier} {
+        font-size: #{$font-size-helpers-1px-step-limit + 2 * $multiplier}px !important;
+    }
+}
+
+/*===============================================
+  Padding Helpers
+================================================= */
+
+$paddings-helpers-1px-step-limit: 15;
+@mixin paddings-general ($prefix: null) {
+
+    .p#{$prefix}-none {
+        padding: 0 !important;
+    }
+
+    .pt#{$prefix}-none {
+        padding-top: 0 !important;
+    }
+
+    .pb#{$prefix}-none {
+        padding-bottom: 0 !important;
+    }
+
+    .pr#{$prefix}-none {
+        padding-right: 0 !important;
+    }
+
+    .pl#{$prefix}-none {
+        padding-left: 0 !important;
+    }
+
+    @for $padding from 1 through $paddings-helpers-1px-step-limit {
+
+        .p#{$prefix}-#{$padding} {
+            padding: #{$padding}px !important;
+        }
+
+        .pt#{$prefix}-#{$padding} {
+            padding-top: #{$padding}px !important;
+        }
+
+        .pb#{$prefix}-#{$padding} {
+            padding-bottom: #{$padding}px !important;
+        }
+
+        .pr#{$prefix}-#{$padding} {
+            padding-right: #{$padding}px !important;
+        }
+
+        .pl#{$prefix}-#{$padding} {
+            padding-left: #{$padding}px !important;
+        }
+
+    }
+
+}
+
+@include paddings-general();
+
+@each $prefix, $width in $grid-breakpoints {
+
+    @media (min-width: $width) {
+
+        @include paddings-general(-#{$prefix});
+
+    }
+
+}
+
+@for $step from 1 through $paddings-helpers-steps-count {
+
+    @if ($step * $paddings-helpers-step > $paddings-helpers-1px-step-limit) {
+
+        .p-#{$step * $paddings-helpers-step} {
+            padding: #{$step * $paddings-helpers-step}px !important;
+        }
+
+    }
+
+}
+
+@for $step from 1 through $paddings-helpers-horizontal-steps-count {
+
+    @if ($step * $paddings-helpers-step > $paddings-helpers-1px-step-limit) {
+
+        .pr-#{$step * $paddings-helpers-step} {
+            padding-right: #{$step * $paddings-helpers-step}px !important;
+        }
+
+        .pl-#{$step * $paddings-helpers-step} {
+            padding-left: #{$step * $paddings-helpers-step}px !important;
+        }
+
+    }
+
+}
+
+@for $step from 1 through $paddings-helpers-vertical-steps-count {
+
+    @if ($step * $paddings-helpers-step > $paddings-helpers-1px-step-limit) {
+
+        .pt-#{$step * $paddings-helpers-step} {
+            padding-top: #{$step * $paddings-helpers-step}px !important;
+        }
+
+        .pb-#{$step * $paddings-helpers-step} {
+            padding-bottom: #{$step * $paddings-helpers-step}px !important;
+        }
+
+    }
+}
+
+/*===============================================
+  E. Margin Helpers
+================================================= */
+/* margin center helper */
+
+$margins-helpers-1px-step-limit: 15;
+@mixin margins-general ($prefix: null) {
+
+    .m#{$prefix}-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .m#{$prefix}-none {
+        margin: 0 !important;
+    }
+
+    .mt#{$prefix}-none {
+        margin-top: 0 !important;
+    }
+
+    .mb#{$prefix}-none {
+        margin-bottom: 0 !important;
+    }
+
+    .mr#{$prefix}-none {
+        margin-right: 0 !important;
+    }
+
+    .ml#{$prefix}-none {
+        margin-left: 0 !important;
+    }
+
+    @for $margin from 1 through $margins-helpers-1px-step-limit {
+
+        .m#{$prefix}-#{$margin} {
+            margin: #{$margin}px !important;
+        }
+
+        .mt#{$prefix}-#{$margin} {
+            margin-top: #{$margin}px !important;
+        }
+
+        .mb#{$prefix}-#{$margin} {
+            margin-bottom: #{$margin}px !important;
+        }
+
+        .mr#{$prefix}-#{$margin} {
+            margin-right: #{$margin}px !important;
+        }
+
+        .ml#{$prefix}-#{$margin} {
+            margin-left: #{$margin}px !important;
+        }
+
+        // negative margins
+
+        .mt#{$prefix}-minus-#{$margin} {
+            margin-top: -#{$margin}px !important;
+        }
+
+        .mb#{$prefix}-minus-#{$margin} {
+            margin-bottom: -#{$margin}px !important;
+        }
+
+        .mr#{$prefix}-minus-#{$margin} {
+            margin-right: -#{$margin}px !important;
+        }
+
+        .ml#{$prefix}-minus-#{$margin} {
+            margin-left: -#{$margin}px !important;
+        }
+    }
+
+}
+
+@include margins-general();
+
+@each $prefix, $width in $grid-breakpoints {
+
+    @media (min-width: $width) {
+
+        @include margins-general(-#{$prefix});
+
+    }
+
+}
+
+@for $step from 1 through $margins-helpers-steps-count {
+
+    @if ($step * $margins-helpers-step > $margins-helpers-1px-step-limit) {
+
+        .m-#{$step * $margins-helpers-step} {
+            margin: #{$step * $margins-helpers-step}px !important;
+        }
+
+    }
+
+}
+
+@for $step from 1 through $margins-helpers-horizontal-steps-count {
+
+    @if ($step * $margins-helpers-step > $margins-helpers-1px-step-limit) {
+
+        .mr-#{$step * $margins-helpers-step} {
+            margin-right: #{$step * $margins-helpers-step}px !important;
+        }
+
+        .ml-#{$step * $margins-helpers-step} {
+            margin-left: #{$step * $margins-helpers-step}px !important;
+        }
+
+        // negative margins
+
+        .mr-minus-#{$step * $margins-helpers-step} {
+            margin-right: -#{$step * $margins-helpers-step}px !important;
+        }
+
+        .ml-minus-#{$step * $margins-helpers-step} {
+            margin-left: -#{$step * $margins-helpers-step}px !important;
+        }
+
+    }
+
+}
+
+@for $step from 1 through $margins-helpers-vertical-steps-count {
+
+    @if ($step * $margins-helpers-step > $margins-helpers-1px-step-limit) {
+
+        .mt-#{$step * $margins-helpers-step} {
+            margin-top: #{$step * $margins-helpers-step}px !important;
+        }
+
+        .mb-#{$step * $margins-helpers-step} {
+            margin-bottom: #{$step * $margins-helpers-step}px !important;
+        }
+
+        // negative margins
+
+        .mt-minus-#{$step * $margins-helpers-step} {
+            margin-top: -#{$step * $margins-helpers-step}px !important;
+        }
+
+        .mb-minus-#{$step * $margins-helpers-step} {
+            margin-bottom: -#{$step * $margins-helpers-step}px !important;
+        }
+
+    }
+}
+
+/*===============================================
+  LineHeight Helpers
+================================================= */
+
+@for $multiplier from 0 through $line-heights-helpers-max-multiplier {
+    @each $line-height in $line-heights-helpers-map {
+        .lh-#{$multiplier * 10 + $line-height} {
+            line-height: #{$multiplier * 10 + $line-height}px !important;
+        }
+    }
+}
+
+/*===============================================
+  Border Helpers
+================================================= */
+
+.br-l-none {
+    border-left: none !important;
+}
+
+.br-r-none {
+    border-right: none !important;
+}
+
+.br-t-none {
+    border-top: none !important;
+}
+
+.br-b-none {
+    border-bottom: none !important;
+}
+
+.br-none {
+    border: none !important;
+}
+
+.br-vert-none {
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.br-horiz-none {
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.br-all {
+    border: 1px solid #{$border-color} !important;
+}
+
+.br-l {
+    border-left: 1px solid #{$border-color} !important;
+}
+
+.br-r {
+    border-right: 1px solid #{$border-color} !important;
+}
+
+.br-t {
+    border-top: 1px solid #{$border-color} !important;
+}
+
+.br-b {
+    border-bottom: 1px solid #{$border-color} !important;
+}
+
+.br-dashed {
+    border-style: dotted !important;
+}
+
+/* Border Radius */
+
+.br-rad-none {
+    border-radius: 0 !important;
+}
+
+@for $radius from 1 through 12 {
+    .br-rad-#{$radius} {
+        border-radius: #{$radius}px !important;
+    }
+}
+
+.br-rad-15 {
+    border-radius: 12px !important;
+}
+
+.br-rad-20 {
+    border-radius: 20px !important;
+}
+
+.br-rad-half {
+    border-radius: 50% !important;
+}
+
+.br-rad-full {
+    border-radius: 50% !important;
+}
+
+/* Border Width */
+
+@for $width from 1 through 10 {
+    .br-w-#{$width} {
+        border-width: #{$width}px !important;
+    }
+}
+
+/* Border Colors */
+
+.br-white {
+    border-color: #FFF !important;
+}
+
+.br-black {
+    border-color: #000 !important;
+}
+
+.br-default {
+    border-color: #{$border-color} !important;
+}
+
+.br-light-grey {
+    border-color: #{$gray-400} !important;
+}
+
+.br-grey {
+    border-color: #{$gray-500} !important;
+}
+
+.br-dark-grey {
+    border-color: #{$gray-600} !important;
+}
+
+/*# sourceMappingURL=helpers.css.map */

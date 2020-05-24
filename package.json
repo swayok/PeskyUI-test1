@@ -16,6 +16,9 @@
         "css-prefix": "postcss --config build/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
         "css-minify": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap.min.css dist/css/bootstrap.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/pesky-ui.min.css dist/css/pesky-ui.css",
         "css-copy": "cross-env-shell shx mkdir -p examples/dist/ && cross-env-shell shx cp -r dist/css/ examples/dist/",
+        "css-lite": "npm-run-all css-lite-compile css-lite-prefix css-copy",
+        "css-lite-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/pesky-ui.scss dist/css/pesky-ui.css",
+        "css-lite-prefix": "postcss --config build/postcss.config.js --replace \"dist/css/pesky-ui.css\" \"!dist/css/pesky-ui.min.css\"",
         "js": "npm-run-all js-compile js-minify js-copy",
         "js-compile": "npm-run-all --parallel js-compile-* --sequential js-copy",
         "js-compile-standalone": "rollup --environment BUNDLE:false --config build/rollup.config.js --sourcemap",
@@ -25,9 +28,11 @@
         "js-minify-bundle": "terser --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/js/pesky-ui.bundle.js.map,includeSources,url=pesky-ui.bundle.min.js.map\" --output dist/js/pesky-ui.bundle.min.js dist/js/pesky-ui.bundle.js",
         "js-copy": "cross-env-shell shx mkdir -p examples/dist/ && cross-env-shell shx cp -r dist/js/ examples/dist/",
         "dist": "npm-run-all --parallel css js",
-        "watch": "npm-run-all --parallel watch-*",
+        "watch": "npm-run-all --parallel watch-css watch-js",
         "watch-css": "nodemon --watch scss/ --ext scss --exec \"npm run css\"",
-        "watch-js": "nodemon --watch js/ --ext js --exec \"npm run js-compile\""
+        "watch-js": "nodemon --watch js/ --ext js --exec \"npm run js-compile\"",
+        "watch-lite": "npm-run-all --parallel watch-css-lite watch-js",
+        "watch-css-lite": "nodemon --watch scss/ --ext scss --exec \"npm run css-lite\""
     },
     "style": "dist/css/pesky-ui.css",
     "sass": "scss/pesky-ui.scss",
