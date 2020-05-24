@@ -10,6 +10,7 @@ import Tab from './tab'
 import Toast from './toast'
 import Tooltip from './tooltip'
 import Util from './util'
+import SimpleScrollbar from './plugins/simple-scrollbar/simple-scrollbar'
 import PeskyUI from './pesky-ui'
 
 /**
@@ -32,5 +33,6 @@ export {
     Tab,
     Toast,
     Tooltip,
+    SimpleScrollbar,
     PeskyUI
 }
