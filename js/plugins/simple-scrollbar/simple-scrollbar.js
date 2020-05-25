@@ -130,10 +130,8 @@ const factory = function (w, d) {
 const SimpleScrollbar = factory(window, document);
 
 $.fn.extend({
-    simpleScrollbar: function () {
-        console.log(this);
+    SimpleScrollbar: function () {
         return this.each(function () {
-            console.log(this);
             let data = $(this).data('SimpleScrollbar')
 
             if (!data) {

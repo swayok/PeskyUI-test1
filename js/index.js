@@ -11,14 +11,8 @@ import Toast from './toast'
 import Tooltip from './tooltip'
 import Util from './util'
 import SimpleScrollbar from './plugins/simple-scrollbar/simple-scrollbar'
+import TreeView from './plugins/admin-lte/treeview'
 import PeskyUI from './pesky-ui'
-
-/**
- * --------------------------------------------------------------------------
- * Bootstrap (v4.5.0): index.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * --------------------------------------------------------------------------
- */
 
 export {
     Util,
@@ -34,5 +28,6 @@ export {
     Toast,
     Tooltip,
     SimpleScrollbar,
+    TreeView,
     PeskyUI
 }
