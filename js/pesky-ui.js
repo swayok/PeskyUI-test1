@@ -16,7 +16,7 @@ class PeskyUI {
             initializers: PeskyUI.defaultInitializers,
             leftSidebarSelector: '#left-sidebar',
             rightSidebarSelector: '#right-sidebar',
-            sidebarMenuContainerSelector: '.menu-container',
+            sidebarMenuContainerSelector: '.sidebar-menu',
             sidebarScrollContainerSelector: '.scrollable',
         };
     }
@@ -40,16 +40,25 @@ class PeskyUI {
     initLeftSidebar() {
         this.$leftSidebar = $(this.options.leftSidebarSelector);
         if (this.$leftSidebar.length) {
+            console.log(this.$leftSidebar, this.$leftSidebar.find(this.options.sidebarMenuContainerSelector), this.$leftSidebar.find(this.options.sidebarScrollContainerSelector));
             this.$leftSidebar.find(this.options.sidebarMenuContainerSelector).Treeview();
-            this.$leftSidebar.find(this.options.sidebarScrollContainerSelector).SimpleScrollbar();
+            let $scrollable = this.$leftSidebar.find(this.options.sidebarScrollContainerSelector);
+            if (!$scrollable.length) {
+                $scrollable = this.$leftSidebar;
+            }
+            $scrollable.SimpleScrollbar();
         }
     }
 
     initRightSidebar() {
-        this.$rightSidebar = $(this.options.leftSidebarSelector);
+        this.$rightSidebar = $(this.options.rightSidebarSelector);
         if (this.$rightSidebar.length) {
             this.$rightSidebar.find(this.options.sidebarMenuContainerSelector).Treeview();
-            this.$rightSidebar.find(this.options.sidebarScrollContainerSelector).SimpleScrollbar();
+            let $scrollable = this.$rightSidebar.find(this.options.sidebarScrollContainerSelector);
+            if (!$scrollable.length) {
+                $scrollable = this.$rightSidebar;
+            }
+            $scrollable.SimpleScrollbar();
         }
     }
 

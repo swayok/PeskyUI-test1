@@ -1,27 +1,170 @@
 #left-sidebar,
 #right-sidebar {
-    overflow: visible;
+    overflow: hidden;
     background-color: #DDDDDD;
+    height: 100vh;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
 
     &.hidden {
         display: none;
     }
+
+    .scrollable {
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .section-header {
+        min-height: 30px;
+        line-height: 20px;
+        padding: 5px 10px 5px 10px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    ul.sidebar-menu {
+
+        &,
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            position: relative;
+
+            > .nav-link {
+                margin-bottom: .2rem;
+
+                .right {
+                    @include transition(transform $transition-fn $transition-speed);
+                }
+            }
+        }
+
+        .nav-link > .right,
+        .nav-link > p > .right {
+            position: absolute;
+            right: 1rem;
+            top: .7rem;
+
+            i,
+            span {
+                margin-left: .5rem;
+            }
+
+            &:nth-child(2) {
+                right: 2.2rem;
+            }
+        }
+
+        .menu-open {
+            > .nav-treeview {
+                display: block;
+            }
+
+            > .nav-link {
+                i.right {
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+
+        // First Level
+        > .nav-item {
+            margin-bottom: 0;
+
+            .nav-icon {
+                margin-left: .05rem;
+                font-size: 1.2rem;
+                margin-right: .2rem;
+                text-align: center;
+                width: $sidebar-icon-width;
+
+                &.fa,
+                &.fas,
+                &.far,
+                &.fab,
+                &.glyphicon,
+                &.ion {
+                    font-size: 1.1rem;
+                }
+            }
+
+            .float-right {
+                margin-top: 3px;
+            }
+        }
+
+        // Tree view menu
+        .nav-treeview {
+            display: none;
+            list-style: none;
+            padding: 0;
+
+            > .nav-item {
+                > .nav-link {
+                    > .nav-icon {
+                        width: $sidebar-icon-width;
+                    }
+                }
+            }
+        }
+
+        &.nav-child-indent {
+            .nav-treeview {
+                transition: padding $transition-speed $transition-fn;
+                padding-left: 1rem;
+
+                .text-sm & {
+                    padding-left: .5rem;
+                }
+            }
+
+        }
+
+        .nav-header {
+            font-size: .9rem;
+            padding: .5rem;
+
+            &:not(:first-of-type) {
+                padding: 1.7rem 1rem .5rem;
+            }
+        }
+
+        .nav-link p {
+            display: inline-block;
+            animation-name: fadeIn;
+            animation-duration: $transition-speed;
+            animation-fill-mode: both;
+            margin: 0;
+        }
+
+    }
 }
 
 #left-sidebar {
-    width: #{$left-sidebar-full-width};
+    width: #{$sidebar-full-width};
 
-    &.collapsed {
-        width: #{$left-sidebar-collpased-width};
+    #left-sidebar-header {
+        height: #{$left-sidebar-logo-height};
+        width: 100%;
     }
 
+    &.collapsed {
+        width: #{sidebar-collpased-width};
+    }
 }
 
 #right-sidebar {
-    width: #{$right-sidebar-full-width};
+    width: #{$sidebar-full-width};
 
     &.collapsed {
-        width: #{$right-sidebar-collpased-width};
+        width: #{$sidebar-collpased-width};
     }
 
 }

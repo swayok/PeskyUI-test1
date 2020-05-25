@@ -1203,24 +1203,26 @@ $paddings-helpers-vertical-steps-count:         16;
 
 // Layout
 
+$transition-speed:                  0.2s !default;
+$transition-fn:                     ease-in-out !default;
+
 // Header
 
-$header-height:                     50px;
+$header-height:                     50px !default;
 
 // Footer
 
-$footer-height:                     40px;
+$footer-height:                     40px !default;
 
 // Sidebars
 
-$left-sidebar-full-width:           230px;
-$left-sidebar-logo-height:          $header-height;
-$left-sidebar-icon-width:           20px;
-$left-sidebar-collpased-width:      50px;
+$sidebar-full-width:                250px !default;
+$sidebar-icon-width:                20px !default;
+$sidebar-collpased-width:           50px !default;
+$left-sidebar-logo-height:          $header-height !default;
 
-$right-sidebar-full-width:          230px;
-$right-sidebar-logo-height:         $header-height;
-$right-sidebar-icon-width:          20px;
-$right-sidebar-collpased-width:     50px;
+// Simple Scrollbar plugin
 
-// Simple Scrollbar blugin
+// Treeview plugin in scrollbar
+
+
